@@ -1,0 +1,25 @@
+﻿@using MvcSql.Domain
+@model IQueryable<MvcSql.Domain.Article>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <a asp-controller="Home" asp-action="ArticlesEdit">Новая статья</a>
+</div>
+
+<div class="text-center">
+    @foreach (Article entity in Model)
+    {
+        <div>
+            @entity.Title
+            |
+            <a asp-controller="Home" asp-action="ArticlesEdit" asp-route-id="@entity.Id">редактировать</a>
+            |
+            <form method="post" asp-controller="Home" asp-action="ArticlesDelete">
+                <input type="hidden" value="@entity.Id" name="Id"/>
+                <input type="submit" value="удалить" />
+            </form>
+        </div>
+    }
+</div>

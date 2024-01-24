@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSql", "MvcSql\MvcSql.csproj", "{CDFB1B44-E874-410E-927D-A352F19FEF4E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDFB1B44-E874-410E-927D-A352F19FEF4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDFB1B44-E874-410E-927D-A352F19FEF4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDFB1B44-E874-410E-927D-A352F19FEF4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDFB1B44-E874-410E-927D-A352F19FEF4E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D7E9A14-BDB3-4FCE-B470-E553B86AE2D1}
+	EndGlobalSection
+EndGlobal
