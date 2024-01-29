@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Teacher>
+<head>
+    <style>
+
+button {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+            border: 2px solid #f34870;
+            border-radius: 5px;
+    color: #ffffff;
+            background-color: #f34870;
+            transition: background-color 0.3s, color 0.3s;
+}
+
+
+button:hover {
+    background-color: #ffffff;
+                color: #f34870;
+            }
+
+a{
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px 0px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border: 2px solid #5077eb;
+            border-radius: 5px;
+            color: #ffffff;
+            background-color: #5077eb;
+            transition: background-color 0.3s, color 0.3s;
+        }
+a:hover{
+                text-decoration: none;
+                background-color: #ffffff;
+                color: #5077eb;
+            }
+
+    </style>
+</head>
+@{
+    Layout = "_Layout";
+    var title = "Таблица учителей";
+    ViewData["Title"] = title;
+}
+
+<h2>@title</h2>
+
+<h3><a asp-action="Create" class="btn btn-sm btn-secondary">Добавить</a></h3>
+<table class="table table-bordered table-sm table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Имя</th>
+            <th>Предмет</th>
+            <th>Количество учеников</th>
+            <th>Зарплата</th>
+            <th>Добавлено</th>
+            <th>Обновить</th>
+            <th>Удалить</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model == null)
+        {
+            <tr><td colspan="7" class="text-center">No Model Data</td></tr>
+        }
+        else
+        {
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>@p.Name</td>
+                    <td>@p.Skills</td>
+                    <td>@p.TotalStudents</td>
+                    <td>@string.Format("{0:N0}", p.Salary) руб.</td>
+                    <td>@p.AddedOn.ToString("dddd, dd MMMM yyyy", new System.Globalization.CultureInfo("ru-RU"))</td>
+
+                    <td><a asp-action="Update" asp-route-id="@p.Id">Редактировать</a></td>
+                    <td>
+                        <form asp-action="Delete" method="post" asp-route-id="@p.Id">
+                            <button>Удалить</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
